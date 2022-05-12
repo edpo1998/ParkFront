@@ -9,7 +9,7 @@ RUN yarn build
 ### STAGE 2: Run ###
 FROM nginx:1.21.6-alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=node /app/build/ /usr/share/nginx/html
+COPY --from=node /app/dist/ /usr/share/nginx/html
 EXPOSE 80
 
 #EJEMPLO SINGLE STAGE - YA TIENE QUE ESTAR REALIZADO EL BUILD
